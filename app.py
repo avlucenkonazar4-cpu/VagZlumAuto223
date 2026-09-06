@@ -9,7 +9,7 @@ import os
 BASE = Path(__file__).resolve().parent
 DB_PATH = BASE / "vagzlumauto.db"
 UPLOAD_DIR = BASE / "static" / "uploads"
-UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY", "change-this-secret-key")
